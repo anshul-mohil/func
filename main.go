@@ -21,8 +21,14 @@ THE SOFTWARE.
 */
 package main
 
-import "func/cmd"
+import (
+  "func/cmd"
+)
 
 func main() {
   cmd.Execute()
+  ////url := "https://opensubtitles-subtitle-tools.p.rapidapi.com/supported"
+
+
+
 }

@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func GetSubtitle(movieName, year string) (subtitileMessage *SearchResponse) {
+func GetImdbIdList(movieName, year string) (subtitileMessage *SearchResponse) {
 	client := New(os.Getenv("API_KEY"))
 	res, err := client.Search(movieName, year)
 	if err != nil { /* ... */ }

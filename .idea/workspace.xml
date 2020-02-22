@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f44a2326-fae7-4c06-bfe9-57da1c72405a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/subtitile.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/SubtitleRetriever.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/imdb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/move.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/filemanagement.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/filemanagement.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/move.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/move.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/SubtitleRetriever.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/SubtitleRetriever.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,15 +36,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pkg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pkg" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.move">
+    <configuration name="move" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="func" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <parameters value="move Parasite" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="func" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="subtitile" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="func" />
       <working_directory value="$PROJECT_DIR$/" />
       <useCustomBuildTags value="true" />
@@ -64,6 +65,15 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.move" />
+      <item itemvalue="Go Build.subtitile" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.subtitile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -85,10 +95,10 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="624" y="241" key="#Inspections/0.0.2048.1152@0.0.2048.1152" timestamp="1581855589844" />
-    <state x="488" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581855672494">
+    <state x="488" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582354981815">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="488" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1152@0.0.2048.1152" timestamp="1581855672494" />
+    <state x="488" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1152@0.0.2048.1152" timestamp="1582354981815" />
     <state x="756" y="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581844288173">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
@@ -97,55 +107,77 @@
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="719" y="220" key="#go_build_func_copy/0.0.2048.1152@0.0.2048.1152" timestamp="1581840745992" />
+    <state x="719" y="219" key="#move" timestamp="1582355009989">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="719" y="219" key="#move/0.0.2048.1152@0.0.2048.1152" timestamp="1582355009989" />
     <state x="787" y="286" key="#xdebugger.evaluate" timestamp="1581855787735">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="787" y="286" key="#xdebugger.evaluate/0.0.2048.1152@0.0.2048.1152" timestamp="1581855787735" />
-    <state width="2006" height="951" key="GridCell.Tab.0.bottom" timestamp="1581856025646">
+    <state width="465" height="466" key="DebuggerActiveHint" timestamp="1582355058991">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state width="465" height="466" key="DebuggerActiveHint/0.23.2048.1049@0.23.2048.1049" timestamp="1582355058991" />
+    <state width="2006" height="367" key="GridCell.Tab.0.bottom" timestamp="1582355824329">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.0.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025646" />
-    <state width="2006" height="951" key="GridCell.Tab.0.center" timestamp="1581856025645">
+    <state width="2006" height="367" key="GridCell.Tab.0.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824329" />
+    <state width="2006" height="367" key="GridCell.Tab.0.center" timestamp="1582355824328">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.0.center/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025645" />
-    <state width="2006" height="951" key="GridCell.Tab.0.left" timestamp="1581856025645">
+    <state width="2006" height="367" key="GridCell.Tab.0.center/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824328" />
+    <state width="2006" height="367" key="GridCell.Tab.0.left" timestamp="1582355824328">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.0.left/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025645" />
-    <state width="2006" height="951" key="GridCell.Tab.0.right" timestamp="1581856025646">
+    <state width="2006" height="367" key="GridCell.Tab.0.left/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824328" />
+    <state width="2006" height="367" key="GridCell.Tab.0.right" timestamp="1582355824329">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.0.right/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025646" />
-    <state width="2006" height="951" key="GridCell.Tab.1.bottom" timestamp="1581856025648">
+    <state width="2006" height="367" key="GridCell.Tab.0.right/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824329" />
+    <state width="2006" height="367" key="GridCell.Tab.1.bottom" timestamp="1582355824330">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.1.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025648" />
-    <state width="2006" height="951" key="GridCell.Tab.1.center" timestamp="1581856025647">
+    <state width="2006" height="367" key="GridCell.Tab.1.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824330" />
+    <state width="2006" height="367" key="GridCell.Tab.1.center" timestamp="1582355824330">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.1.center/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025647" />
-    <state width="2006" height="951" key="GridCell.Tab.1.left" timestamp="1581856025647">
+    <state width="2006" height="367" key="GridCell.Tab.1.center/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824330" />
+    <state width="2006" height="367" key="GridCell.Tab.1.left" timestamp="1582355824330">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.1.left/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025647" />
-    <state width="2006" height="951" key="GridCell.Tab.1.right" timestamp="1581856025647">
+    <state width="2006" height="367" key="GridCell.Tab.1.left/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824330" />
+    <state width="2006" height="367" key="GridCell.Tab.1.right" timestamp="1582355824330">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="951" key="GridCell.Tab.1.right/0.0.2048.1152@0.0.2048.1152" timestamp="1581856025647" />
+    <state width="2006" height="367" key="GridCell.Tab.1.right/0.0.2048.1152@0.0.2048.1152" timestamp="1582355824330" />
+    <state x="689" y="259" width="670" height="676" key="search.everywhere.popup" timestamp="1581944331568">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="689" y="259" width="670" height="676" key="search.everywhere.popup/0.0.2048.1152@0.0.2048.1152" timestamp="1581944331568" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cmd/move.go</url>
-          <line>81</line>
+          <line>86</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/util/SubtitleRetriever.go</url>
+          <line>12</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/subtitile.go</url>
+          <line>46</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cmd/move.go</url>
-          <line>49</line>
-          <option name="timeStamp" value="11" />
+          <line>46</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

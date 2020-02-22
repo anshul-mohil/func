@@ -22,6 +22,7 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"fmt"
 	"func/util"
 	"github.com/spf13/cobra"
 	"os"
@@ -43,6 +44,10 @@ to quickly create a Cobra application.`,
 		//args[0]
 		source := os.Getenv("TMPDIR") + "Popcorn-Time"
 		files := listAllFiles(source)
+		if len(files) == 1 {
+			fmt.Printf("No files found cached yet so..... Exiting for now     ")
+			return
+		}
 		for i := 0; i < len(files); i++ {
 			//fmt.Println(files[i])
 			if strings.Contains(files[i], args[0]) == true {

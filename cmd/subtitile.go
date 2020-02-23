@@ -26,6 +26,7 @@ import (
 	"fmt"
 	"func/util"
 	"github.com/spf13/cobra"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -44,23 +45,65 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if os.Getenv("API_KEY") == ""{
+		if os.Getenv("API_KEY") == "" {
 			log.Fatal("API_KEY environment variable needs to be set to access subtitle API")
 		}
 		//todo: need to add check to know when API_KEY is wrong....
-		listOfSubtitles :=util.GetImdbIdList(args[0],"")
-		if listOfSubtitles ==nil{
-			log.Fatal("Unable to get any subtitles for requested movie: ",args[0])
+		listOfttIds := util.GetImdbIdList(args[0], "")
+		if listOfttIds == nil {
+			log.Fatal("Unable to get any Imdb ttIds for requested movie: ", args[0])
 		}
-		fmt.Println(listOfSubtitles.Search[0].ImdbID)
-		downloadSubtitle(listOfSubtitles.Search[0].ImdbID, args[0])
-		//subtitileFilePath := ""
-		//util.CopyDirectory(subtitileFilePath, destination)
+		fmt.Println(listOfttIds.Search[0].ImdbID)
+		downloadSubtitle(listOfttIds.Search[0].ImdbID, "/Users/anshulmohil/Downloads/anukulmovies", listOfttIds.Search[0].Title)
 	},
 }
 
-func downloadSubtitle(imdbId string,name string){
-	url := "https://rest.opensubtitles.org/search/imdbid-"+imdbId+"/sublanguageid-eng"
+func downloadSubtitle(imdbId string, basePath string, movieName string) {
+	body, results := getSubtitileMetadata(imdbId)
+
+	// Unmarshal or Decode the JSON to the interface.
+	json.Unmarshal([]byte(body), &results)
+	fmt.Println("Below are the details of srts downloaded for movie requested")
+	for jsonArrayIndex, result := range results {
+		printSrtMeta(result, jsonArrayIndex)
+		url := result["ZipDownloadLink"].(string)
+
+		fullFilePath := basePath + "/" + movieName + "/"
+		createPathIfNotExist(fullFilePath)
+		fileName := strings.Replace(result["SubFileName"].(string), ".srt", ".zip", 1)
+		if err := DownloadFile(fullFilePath+fileName, url); err != nil {
+			panic(err)
+		}
+	}
+}
+
+func createPathIfNotExist(path string) {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		os.Mkdir(path, os.ModePerm)
+	}
+}
+func DownloadFile(filepath string, url string) error {
+
+	// Get the data
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	// Create the file
+	out, err := os.Create(filepath)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	// Write the body to file
+	_, err = io.Copy(out, resp.Body)
+	return err
+}
+func getSubtitileMetadata(imdbId string) ([]byte, []map[string]interface{}) {
+	url := "https://rest.opensubtitles.org/search/imdbid-" + imdbId + "/sublanguageid-eng"
 	req, _ := http.NewRequest("GET", url, nil)
 	req.Header.Set("User-Agent", "TemporaryUserAgent")
 	//req.Header.Add("x-rapidapi-host", "opensubtitles-subtitle-tools.p.rapidapi.com")
@@ -71,25 +114,8 @@ func downloadSubtitle(imdbId string,name string){
 
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
-	//body := json.NewDecoder(res.Body)
-//	fmt.Println(res)
-//	//fmt.Println(string(body))
-//	bolB, _ := json.Marshal(decoder)
-//	fmt.Println(string(bolB))
-	// Declared an empty interface of type Array
 	var results []map[string]interface{}
-
-	// Unmarshal or Decode the JSON to the interface.
-	json.Unmarshal([]byte(body), &results)
-	fmt.Println("Below are the details of srts downloaded for movie requested")
-	for jsonArrayIndex, result := range results {
-		printSrtMeta(result, jsonArrayIndex)
-	}
-	//topStrFiles := getTopStrFiles(3, results,name)
-	//for jsonArrayIndex, result := range topStrFiles {
-	//	printSrtMeta(result, jsonArrayIndex)
-	//}
-
+	return body, results
 }
 
 func printSrtMeta(result map[string]interface{}, jsonArrayIndex int) {
@@ -105,20 +131,21 @@ func printSrtMeta(result map[string]interface{}, jsonArrayIndex int) {
 	fmt.Println("srt Rating:", result["Score"])
 	fmt.Println(jsonArrayIndex)
 }
+
 //Todo: Need to implement sort correctly...
-func getTopStrFiles(topN int, resultJson []map[string]interface{},movieName string) ([]map[string]interface{}) {
-//	var filteredMetaObject []map[string]interface{}
+func getTopStrFiles(topN int, resultJson []map[string]interface{}, movieName string) []map[string]interface{} {
+	//	var filteredMetaObject []map[string]interface{}
 	topList := make([]float64, int(topN))
 	for jsonArrayIndex, result := range resultJson {
-		if strings.ContainsAny( strings.ToLower(result["MovieReleaseName"].(string)),strings.ToLower(movieName))   && result["SubFormat"] == "srt" {
+		if strings.ContainsAny(strings.ToLower(result["MovieReleaseName"].(string)), strings.ToLower(movieName)) && result["SubFormat"] == "srt" {
 			fmt.Println(jsonArrayIndex)
 			//if(result["Score"])
 			fmt.Println(topList)
-			}
 		}
-//	sort.Slice(resultJson, func(i, j int) bool {return resultJson[i].["Score"].(float64)() < resultJson[j].["Score"].(float64)})
+	}
+	//	sort.Slice(resultJson, func(i, j int) bool {return resultJson[i].["Score"].(float64)() < resultJson[j].["Score"].(float64)})
 
-return nil
+	return nil
 }
 
 func init() {

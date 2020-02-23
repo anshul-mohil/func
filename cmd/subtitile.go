@@ -66,32 +66,76 @@ func downloadSubtitle(imdbId string, basePath string, movieName string) {
 	// Unmarshal or Decode the JSON to the interface.
 	json.Unmarshal([]byte(body), &results)
 	fmt.Println("Below are the details of srts downloaded for movie requested")
+	var fullFilePath string
+	var files []string
 	for jsonArrayIndex, result := range results {
 		printSrtMeta(result, jsonArrayIndex)
 		url := result["ZipDownloadLink"].(string)
 
-		fullFilePath := basePath + "/" + movieName + "/"
+		fullFilePath = basePath + "/" + movieName + "/"
 		createPathIfNotExist(fullFilePath)
 		fileName := strings.Replace(result["SubFileName"].(string), ".srt", ".zip", 1)
 		if err := DownloadFile(fullFilePath+fileName, url); err != nil {
 			panic(err)
 		}
-		var files []string
-		err := filepath.Walk(fullFilePath, func(path string, info os.FileInfo, err error) error {
-			files = append(files, path)
-			return nil
-		})
-		if err != nil {
-			panic(err)
-		}
-		for _, file := range files {
-			fmt.Println(file)
-			Unzip(file, fullFilePath)
-		}
-
 	}
-}
+	err := filepath.Walk(fullFilePath, func(path string, info os.FileInfo, err error) error {
+		files = append(files, path)
+		return nil
+	})
+	if err != nil {
+		panic(err)
+	}
+	for _, file := range files {
+		fmt.Println(file)
+		Unzip(file, fullFilePath)
+	}
+	zipFiles, err := WalkMatch(fullFilePath, "*.zip")
+	nfoFiles, err := WalkMatch(fullFilePath, "*.nfo")
 
+	for _, file := range zipFiles {
+		fmt.Println("Removing file", file)
+		os.Remove(file)
+	}
+	for _, file := range nfoFiles {
+		fmt.Println("Removing file", file)
+		os.Remove(file)
+	}
+
+	//SliceIndex(len(files), func(i int) bool { return files[i] == "" })
+}
+func WalkMatch(root, pattern string) ([]string, error) {
+	var matches []string
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			return nil
+		}
+		if matched, err := filepath.Match(pattern, filepath.Base(path)); err != nil {
+			return err
+		} else if matched {
+			matches = append(matches, path)
+		}
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return matches, nil
+}
+func RemoveIndex(s []int, index int) []int {
+	return append(s[:index], s[index+1:]...)
+}
+func SliceIndex(limit int, predicate func(i int) bool) int {
+	for i := 0; i < limit; i++ {
+		if predicate(i) {
+			return i
+		}
+	}
+	return -1
+}
 func createPathIfNotExist(path string) {
 	if _, err := os.Stat(path); os.IsNotExist(err) {
 		os.Mkdir(path, os.ModePerm)

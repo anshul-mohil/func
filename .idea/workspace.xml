@@ -93,6 +93,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added code to download zip files from link&#10;into directory. Create directory if it doesn't exit." />
+    <MESSAGE value="added todo file to track left work.." />
+    <option name="LAST_COMMIT_MESSAGE" value="added todo file to track left work.." />
+  </component>
   <component name="WindowStateProjectService">
     <state x="624" y="241" key="#Inspections" timestamp="1582382139559">
       <screen x="0" y="0" width="2048" height="1152" />
@@ -119,54 +124,54 @@
     </state>
     <state x="801" y="485" key="#xdebugger.evaluate/0.0.2048.1152@0.0.2048.1152" timestamp="1582424964856" />
     <state x="787" y="283" key="#xdebugger.evaluate/0.23.2048.1049@0.23.2048.1049" timestamp="1582364744045" />
-    <state x="607" y="178" key="CommitChangelistDialog2" timestamp="1582425536140">
+    <state x="607" y="178" key="CommitChangelistDialog2" timestamp="1582428571941">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="607" y="178" key="CommitChangelistDialog2/0.0.2048.1152@0.0.2048.1152" timestamp="1582425536140" />
-    <state width="667" height="512" key="DebuggerActiveHint" timestamp="1582424816815">
+    <state x="607" y="178" key="CommitChangelistDialog2/0.0.2048.1152@0.0.2048.1152" timestamp="1582428571941" />
+    <state width="667" height="512" key="DebuggerActiveHint" timestamp="1582428382928">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="667" height="512" key="DebuggerActiveHint/0.0.2048.1152@0.0.2048.1152" timestamp="1582424816815" />
+    <state width="667" height="512" key="DebuggerActiveHint/0.0.2048.1152@0.0.2048.1152" timestamp="1582428382928" />
     <state width="465" height="466" key="DebuggerActiveHint/0.23.2048.1049@0.23.2048.1049" timestamp="1582355058991" />
-    <state width="2006" height="500" key="GridCell.Tab.0.bottom" timestamp="1582425437900">
+    <state width="2006" height="270" key="GridCell.Tab.0.bottom" timestamp="1582428536824">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="500" key="GridCell.Tab.0.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1582425437900" />
+    <state width="2006" height="270" key="GridCell.Tab.0.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536824" />
     <state width="2006" height="321" key="GridCell.Tab.0.bottom/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803266" />
-    <state width="2006" height="500" key="GridCell.Tab.0.center" timestamp="1582425437899">
+    <state width="2006" height="270" key="GridCell.Tab.0.center" timestamp="1582428536824">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="500" key="GridCell.Tab.0.center/0.0.2048.1152@0.0.2048.1152" timestamp="1582425437899" />
+    <state width="2006" height="270" key="GridCell.Tab.0.center/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536824" />
     <state width="2006" height="321" key="GridCell.Tab.0.center/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803265" />
-    <state width="2006" height="500" key="GridCell.Tab.0.left" timestamp="1582425437898">
+    <state width="2006" height="270" key="GridCell.Tab.0.left" timestamp="1582428536823">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="500" key="GridCell.Tab.0.left/0.0.2048.1152@0.0.2048.1152" timestamp="1582425437898" />
+    <state width="2006" height="270" key="GridCell.Tab.0.left/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536823" />
     <state width="2006" height="321" key="GridCell.Tab.0.left/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803265" />
-    <state width="2006" height="500" key="GridCell.Tab.0.right" timestamp="1582425437899">
+    <state width="2006" height="270" key="GridCell.Tab.0.right" timestamp="1582428536824">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="500" key="GridCell.Tab.0.right/0.0.2048.1152@0.0.2048.1152" timestamp="1582425437899" />
+    <state width="2006" height="270" key="GridCell.Tab.0.right/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536824" />
     <state width="2006" height="321" key="GridCell.Tab.0.right/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803266" />
-    <state width="2006" height="270" key="GridCell.Tab.1.bottom" timestamp="1582425331661">
+    <state width="2006" height="270" key="GridCell.Tab.1.bottom" timestamp="1582428536826">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="270" key="GridCell.Tab.1.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1582425331661" />
+    <state width="2006" height="270" key="GridCell.Tab.1.bottom/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536826" />
     <state width="2006" height="321" key="GridCell.Tab.1.bottom/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803267" />
-    <state width="2006" height="270" key="GridCell.Tab.1.center" timestamp="1582425331661">
+    <state width="2006" height="270" key="GridCell.Tab.1.center" timestamp="1582428536825">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="270" key="GridCell.Tab.1.center/0.0.2048.1152@0.0.2048.1152" timestamp="1582425331661" />
+    <state width="2006" height="270" key="GridCell.Tab.1.center/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536825" />
     <state width="2006" height="321" key="GridCell.Tab.1.center/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803267" />
-    <state width="2006" height="270" key="GridCell.Tab.1.left" timestamp="1582425331661">
+    <state width="2006" height="270" key="GridCell.Tab.1.left" timestamp="1582428536825">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="270" key="GridCell.Tab.1.left/0.0.2048.1152@0.0.2048.1152" timestamp="1582425331661" />
+    <state width="2006" height="270" key="GridCell.Tab.1.left/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536825" />
     <state width="2006" height="321" key="GridCell.Tab.1.left/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803266" />
-    <state width="2006" height="270" key="GridCell.Tab.1.right" timestamp="1582425331661">
+    <state width="2006" height="270" key="GridCell.Tab.1.right" timestamp="1582428536825">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state width="2006" height="270" key="GridCell.Tab.1.right/0.0.2048.1152@0.0.2048.1152" timestamp="1582425331661" />
+    <state width="2006" height="270" key="GridCell.Tab.1.right/0.0.2048.1152@0.0.2048.1152" timestamp="1582428536825" />
     <state width="2006" height="321" key="GridCell.Tab.1.right/0.23.2048.1049@0.23.2048.1049" timestamp="1582364803267" />
     <state x="682" y="333" width="683" height="486" key="find.popup" timestamp="1582369725383">
       <screen x="0" y="0" width="2048" height="1152" />
@@ -192,18 +197,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cmd/subtitile.go</url>
-          <line>137</line>
+          <line>150</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cmd/subtitile.go</url>
-          <line>146</line>
+          <line>158</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cmd/subtitile.go</url>
-          <line>73</line>
+          <line>74</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/subtitile.go</url>
+          <line>88</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
